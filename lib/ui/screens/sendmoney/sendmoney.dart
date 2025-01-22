@@ -39,7 +39,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
   String _amount = "1";
 
   late final String accountIdValue;
-  late final String _balance;
+  String _balance = "0";
 
   bool _isEnabled = false;
 
@@ -77,25 +77,33 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                     //show loading
                     AlertDialogUtils.showLoadingAlertDialog(context: context);
                   } else if (state.status == SendMoneyStatus.success) {
-                    //hide loading
-                    AlertDialogUtils.hideAlertDialog(context: context);
-                    kIsWeb == false
-                        ? openBottomSheet("Success")
-                        : AlertDialogUtils.showAlertDialog(
-                            context: context,
-                            contentText: 'Success',
-                            buttonText: 'Ok',
-                            onButtonPressed: () {
-                              AlertDialogUtils.hideAlertDialog(
-                                  context: context);
-                            });
                     SchedulerBinding.instance.addPostFrameCallback((_) {
                       var request = UserDetails(
                           accountIdValue, "", validateTransaction().toString());
                       LoggerUtil.info(request.balance.toString());
+
                       context
                           .read<UserDetailsBloc>()
                           .add(UpdateBalance(body: request));
+
+                      setState(() {
+                        final formatter = NumberFormat('#,##0.00', 'en_US');
+                        var tempBal = formatter.format(
+                            double.parse(request.balance.toString()));
+                        _balance = "$tempBal PHP";
+                      });
+                      //hide loading
+                      AlertDialogUtils.hideAlertDialog(context: context);
+                      kIsWeb == false
+                          ? openBottomSheet("Success")
+                          : AlertDialogUtils.showAlertDialog(
+                              context: context,
+                              contentText: 'Success',
+                              buttonText: 'Ok',
+                              onButtonPressed: () {
+                                AlertDialogUtils.hideAlertDialog(
+                                    context: context);
+                              });
                     });
                   } else if (state.status == SendMoneyStatus.failure) {
                     AlertDialogUtils.hideAlertDialog(context: context);

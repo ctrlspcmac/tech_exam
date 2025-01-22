@@ -32,12 +32,10 @@ class MainScreenApp extends StatelessWidget {
           onGenerateRoute: AppNavigator.onGenerateRoute,
           builder: (context, child) {
             if (child == null) return const SizedBox.shrink();
-
             final data = MediaQuery.of(context);
-
             return MediaQuery(
               data: data.copyWith(
-                textScaler: TextScaler.linear(1),
+                textScaler: TextScaler.noScaling,
               ),
               child: child,
             );
