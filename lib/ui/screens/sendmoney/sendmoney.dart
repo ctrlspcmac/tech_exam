@@ -95,10 +95,10 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                       //hide loading
                       AlertDialogUtils.hideAlertDialog(context: context);
                       kIsWeb == false
-                          ? openBottomSheet("Success")
+                          ? openBottomSheet(AppStrings.sendMoneySuccess)
                           : AlertDialogUtils.showAlertDialog(
                               context: context,
-                              contentText: 'Success',
+                              contentText: AppStrings.sendMoneySuccess,
                               buttonText: 'Ok',
                               onButtonPressed: () {
                                 AlertDialogUtils.hideAlertDialog(
@@ -109,10 +109,10 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                     AlertDialogUtils.hideAlertDialog(context: context);
                     //show error msg
                     kIsWeb == false
-                        ? openBottomSheet(state.error.toString())
+                        ? openBottomSheet(AppStrings.sendMoneyFail)
                         : AlertDialogUtils.showAlertDialog(
                             context: context,
-                            contentText: 'Failed',
+                            contentText: AppStrings.sendMoneyFail,
                             buttonText: 'Ok',
                             onButtonPressed: () {
                               AlertDialogUtils.hideAlertDialog(

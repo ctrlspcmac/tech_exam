@@ -24,4 +24,6 @@ class AppStrings {
   static const String transactions = 'Transactions';
   static const String transactionsView = 'View\nTransactions';
   static const String sendMoney = 'Send Money';
+  static const String sendMoneySuccess = 'Money Sent';
+  static const String sendMoneyFail = 'Sending failed. Please try again later.';
 }
