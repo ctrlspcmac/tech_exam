@@ -69,7 +69,7 @@ http://localhost:3000/accounts/1 – View accounts with ID 1
 
 ============================= Download Data Source =========================================
 
-DB.JSON : refer to email link
+DB.JSON : please refer to email link
 	note : make sure download DB.JSON and put it to folder where json-server is installed.
 	for installed in global, can put any desired folder
 
@@ -79,7 +79,9 @@ Open the project folder in your IDE (e.g., Android Studio).
 Navigate to the test folder, open the unit test class file, right-click, and select Run.
 
 
-================================ UI ==================================================
+================================ UI =========================================================
 
-FIGMA LINK : refer to email link
+FIGMA LINK : please refer to email link
+
+App user credential : please refer to the email
 
