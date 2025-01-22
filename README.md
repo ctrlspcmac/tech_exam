@@ -4,23 +4,11 @@ A  Flutter technical exam project for maya. candidate jay mark garcia
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-
-============================READ ME====================================	 
+============================ READ ME ====================================	 
 									 
 to run this app pre-requisites are node.js, json-server			 
 									  
-============= Install Node js =========================================		
+=========================== Install Node js ==============================		
 									  
 Download the Windows Installer : https://nodejs.org/en/download		 
 									
@@ -34,7 +22,7 @@ Verify the Installation
 									
 In CMD run npm install npm --global					
 									
-=========== Set up json-server =======================================	
+=========== Set up json-server =========================================
 									
 create a new directory for your project (optional, but recommended):	
 Open Command Prompt or PowerShell.					
@@ -79,9 +67,9 @@ http://localhost:3000/accounts/1 – View accounts with ID 1
 									
 
 
-============================= Download Source Code =========================================
+============================= Download Data Source =========================================
 
-DB.JSON : refer to email link
+DB.JSON : please refer to email link
 	note : make sure download DB.JSON and put it to folder where json-server is installed.
 	for installed in global, can put any desired folder
 
@@ -91,7 +79,9 @@ Open the project folder in your IDE (e.g., Android Studio).
 Navigate to the test folder, open the unit test class file, right-click, and select Run.
 
 
-================================ References ==================================================
+================================ UI =========================================================
 
-FIGMA LINK : refer to email link
+FIGMA LINK : please refer to email link
+
+App user credential : please refer to the email
 
