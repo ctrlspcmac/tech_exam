@@ -19,7 +19,7 @@ class MainScreenApp extends StatelessWidget {
     var isDark = themeCubit.isDark;
 
     return FlutterWebFrame(
-      maximumSize: kIsWeb ? const Size.fromWidth(1000) : const Size.fromWidth(400),
+      maximumSize: kIsWeb ? const Size.fromWidth(800) : const Size.fromWidth(400),
       backgroundColor: isDark ? Colors.black12 : Colors.grey[200],
       enabled: kIsWeb || !Platform.isAndroid && !Platform.isIOS,
       builder: (context) {

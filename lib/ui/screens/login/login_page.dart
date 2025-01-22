@@ -60,7 +60,8 @@ class LoginPageState extends State<LoginPage> {
             } else if (state.status == SignInStatus.success) {
               //hide loading
               AlertDialogUtils.hideAlertDialog(context: context);
-              AppNavigator.replaceWith(Routes.dashboard,{'accountId' : state.body?.accountId.toString()});
+              AppNavigator.replaceWith(Routes.dashboard,
+                  {'accountId': state.body?.accountId.toString()});
             } else if (state.status == SignInStatus.failure) {
               AlertDialogUtils.hideAlertDialog(context: context);
               //show error msg
@@ -94,7 +95,7 @@ class LoginPageState extends State<LoginPage> {
                         text: 'By signing in you are agreeing to our ',
                         // Normal text
                         style:
-                        TextStyle(fontSize: 12, color: AppColors.subTitle),
+                            TextStyle(fontSize: 12, color: AppColors.subTitle),
                         // Default style
                         children: <TextSpan>[
                           TextSpan(
@@ -106,7 +107,7 @@ class LoginPageState extends State<LoginPage> {
                                 ..onTap = () {
                                   LoggerUtil.info("GOTO TERMS");
                                 } // Blue color
-                          ),
+                              ),
                         ],
                       ),
                     ),
@@ -122,7 +123,8 @@ class LoginPageState extends State<LoginPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                        left: 32.0, right: 32.0, top: 15, bottom: 0).safePadding,
+                            left: 32.0, right: 32.0, top: 15, bottom: 0)
+                        .safePadding,
                     child: TextFormField(
                       controller: _usernameController,
                       decoration: InputDecoration(
@@ -152,7 +154,8 @@ class LoginPageState extends State<LoginPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                        left: 32.0, right: 32.0, top: 15, bottom: 0).safePadding,
+                            left: 32.0, right: 32.0, top: 15, bottom: 0)
+                        .safePadding,
                     //padding: EdgeInsets.symmetric(horizontal: 15),
                     child: TextFormField(
                       controller: _passwordController,
@@ -188,7 +191,7 @@ class LoginPageState extends State<LoginPage> {
                           onPressed: () {
                             setState(() {
                               _isPasswordVisible =
-                              !_isPasswordVisible; // Toggle password visibility
+                                  !_isPasswordVisible; // Toggle password visibility
                             });
                           },
                         ),
@@ -201,7 +204,8 @@ class LoginPageState extends State<LoginPage> {
                     height: 40,
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 32).safePadding,
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 32).safePadding,
                     child: Container(
                       height: 50,
                       width: double.infinity,
@@ -218,7 +222,7 @@ class LoginPageState extends State<LoginPage> {
                         child: const Text(
                           AppStrings.loginButton,
                           style:
-                          TextStyle(color: AppColors.black, fontSize: 20),
+                              TextStyle(color: AppColors.black, fontSize: 20),
                         ),
                       ),
                     ),
@@ -226,21 +230,35 @@ class LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 30,
                   ),
-                  Stack(children: [Image(
-                    image: AppImages.loginBottomImage,
-                    // Replace with your image
-                    fit: BoxFit.fill,
-                    // Optional
-                    alignment: Alignment.bottomCenter,
-                  ),
-                    Image(
-                      image: AppImages.bottomImage,
-                      // Replace with your image
-                      fit: BoxFit.fill,
-                      // Optional
-                      alignment: Alignment.bottomCenter,
-                    )
-                  ],)
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SizedBox(
+                        width: double.infinity,
+                        child: Stack(
+                          fit: StackFit.loose,
+                          alignment: Alignment.center,
+                          children: [
+                            Image(
+                              image: AppImages.loginBottomImage,
+                              fit: BoxFit.fitWidth,
+                              alignment: Alignment.bottomCenter,
+                            ),
+                            // Image(
+                            //   image: AppImages.bottomImage,
+                            //   fit: BoxFit.fill,
+                            //   alignment: Alignment.bottomCenter,
+                            // ),
+                            Image(
+                              image: AppImages.bottomImage,
+                              fit: BoxFit.fitWidth,
+                              alignment: Alignment.bottomCenter,
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
@@ -298,5 +316,4 @@ class LoginPageState extends State<LoginPage> {
       });
     }
   }
-
 }
