@@ -38,7 +38,7 @@ dependencies:
   bloc: ^8.1.2
   intl: ^0.18.0
   flutter_web_frame: ^1.0.0
-  dio: ^4.0.6
+  dio: ^5.7.0
   dio_http_cache_lts: ^0.4.1
   http: ^1.2.0
   bloc_test: ^9.1.5
